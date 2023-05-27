@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
 
-// Serve static files from the "public" directory
+
 app.use(express.static('public'));
 
-// Set EJS as the view engine
+
 app.set('view engine', 'ejs');
 
-// Middleware to check if it's working hours
 app.use((req, res, next) => {
     const date = new Date();
     const dayOfWeek = date.getDay();
